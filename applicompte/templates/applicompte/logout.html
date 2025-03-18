@@ -1,0 +1,15 @@
+{% extends 'shootX/base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/applicompte-logout.css' %}">
+{% endblock %}
+
+{% block title %} Au revoir {% endblock %}
+
+{% block main %}
+<div class="div-logout">
+    <p>Vous nous manquez déjà !</p>
+    <p>Nous espérons vous revoir bientôt !</p>
+    <a href="/login/">Connexion</a>
+</div>
+{% endblock %}

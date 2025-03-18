@@ -1,0 +1,89 @@
+/* =========================
+   GÉNÉRAL
+   ========================= */
+/* Ajuste la marge autour du container si besoin */
+.container.mt-5 {
+    margin-top: 5rem !important;
+  }
+  
+  /* =========================
+     TITRE DE PAGE
+     ========================= */
+  .container.mt-5 h1 {
+    color: var(--color-rouge-orange-dark, #c0392b);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* =========================
+     BOUTON "AJOUTER UNE PHOTO"
+     ========================= */
+  .btn.btn-primary.mb-4 {
+    background-color: var(--color-bleu, #2980b9);
+    border-color: var(--color-bleu, #2980b9);
+    color: #fff;
+  }
+  
+  .btn.btn-primary.mb-4:hover,
+  .btn.btn-primary.mb-4:focus {
+    background-color: var(--color-rouge-orange-dark, #c0392b);
+    border-color: var(--color-rouge-orange-dark, #c0392b);
+  }
+  
+  /* =========================
+     CARDS
+     ========================= */
+  .card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    /* Légère ombre pour effet professionnel */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    height: 100%; /* Pour que la card prenne toute la hauteur possible */
+  }
+  
+  /* Survol de la carte : légère élévation */
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  /* Image en haut de la carte */
+  .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;  /* Ajuste l’image pour qu’elle remplisse l’espace sans déformation excessive */
+  }
+  
+  /* =========================
+     CONTENU DE LA CARD
+     ========================= */
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    color: #333;
+  }
+  
+  /* =========================
+     LAYOUT
+     ========================= */
+  /* Ajuste l’espacement entre les colonnes au besoin */
+  .col-md-4.mb-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* =========================
+     RESPONSIVE
+     ========================= */
+  /* Pour écrans très petits, tu peux ajuster la hauteur de l'image */
+  @media (max-width: 576px) {
+    .card-img-top {
+      height: 150px;
+    }
+  }
+  

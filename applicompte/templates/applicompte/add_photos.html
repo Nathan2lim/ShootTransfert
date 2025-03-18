@@ -1,0 +1,17 @@
+{% extends "shootX/base.html" %}
+{% block title %}Ajouter une photo{% endblock %}
+{%load static%}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/applicompte-add_photos.css' %}">
+{% endblock %}
+
+{% block main %}
+<h1>Ajouter une photo</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Ajouter</button>
+</form>
+<a href="{% url 'applicompte:user_profile' user.username%}">Retour au profil</a>
+
+{% endblock %}

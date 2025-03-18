@@ -1,0 +1,53 @@
+</html>
+{% extends "shootX/base.html" %}
+{% block title %}Accueil - Festival Automobile{% endblock %}
+{%load static%}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/applicompte-general.css' %}">
+    <link rel="stylesheet" href="{% static 'css/applicompte-manage_user.css' %}">
+{% endblock %}
+
+{% block main %}
+    <h1>Liste des utilisateurs</h1>
+    {% if users %}
+    <table>
+        <thead>
+            <tr>
+                <th>Nom d'utilisateur</th>
+                <th>Alias</th>
+                <th>Email</th>
+                <th>Statut Staff</th>
+                <th>Profil</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.userprofile.alias }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.is_staff|yesno:"Oui,Non" }}</td>
+                <td> 
+                    <a href="{% url 'applicompte:user_profile' user.username %}">Voir profil</a>
+                <td>
+                    <form method="POST" action="{% url 'applicompte:manage_user_staff_status' user.id %}">
+                        {% csrf_token %}
+                        {% if user.is_staff %}
+                        <button type="submit" name="action" value="demote">Retirer</button>
+                        {% else %}
+                        <button type="submit" name="action" value="promote">Promouvoir</button>
+                        {% endif %}
+                    </form>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>Aucun utilisateur trouvé.</p>
+    {% endif %}
+
+
+{% endblock %}

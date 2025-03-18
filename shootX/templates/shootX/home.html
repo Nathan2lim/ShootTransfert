@@ -1,0 +1,33 @@
+{% extends "shootX/base.html" %}
+{% block title %}SherWheels Festival{% endblock %}
+{%load static%}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/general.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+{% endblock %}
+
+{% block main %}
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #homepage {
+        background-image: url("{% static 'images/home/background.jpg' %}");
+        background-size: cover;
+        background-position: center;
+
+        width: 100%;
+        min-height: 100vh;
+    }
+</style>
+<div id="homepage">
+    <div class="homepage-header">
+        <h1>Bienvenue au Festival Automobile</h1>
+        <p>Un voyage inoubliable dans le monde des voitures de luxe et des sports automobiles.</p>
+    </div>
+
+  
+</div>
+{% endblock %}

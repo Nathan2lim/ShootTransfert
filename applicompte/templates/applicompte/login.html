@@ -1,0 +1,23 @@
+{% extends 'shootX/base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/applicompte-login.css' %}">
+
+{% endblock %}
+
+{% block title %} Connexion {% endblock %}
+{% block main %}
+
+<form method="post">
+    {% csrf_token %}
+    <label for="username">Email</label>
+    <input type="email" name="username" id="username" required>
+    
+    <label for="password">Mot de passe</label>
+    <input type="password" name="password" id="password" required>
+    
+    <button type="submit">Se connecter</button>
+</form>
+
+<div>
+{% endblock %}

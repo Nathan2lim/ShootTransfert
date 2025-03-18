@@ -1,0 +1,90 @@
+/* =========================
+   STYLE POUR "Ajouter une photo"
+   ========================= */
+
+/* Conteneur principal */
+.container.mt-5 {
+    /* Largeur max et centrage */
+    max-width: 600px;
+    margin: 5rem auto 2rem auto;
+    padding: 2rem;
+  
+    /* Fond blanc et léger arrondi */
+    background-color: #fff;
+    border-radius: 6px;
+  
+    /* Légère ombre */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titre de la page */
+  .container.mt-5 h1 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    /* Couleur d’accent (ou adapte à ta charte) */
+    color: var(--color-rouge-orange-dark, #c0392b);
+  }
+  
+  /* Les paragraphes générés par form.as_p */
+  .container.mt-5 form p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Labels dans le formulaire (Django form.as_p) */
+  .container.mt-5 form p label {
+    display: block;
+    margin-bottom: 0.2rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  /* Champs du formulaire (input, select, textarea)
+     y compris l’upload "file". */
+  .container.mt-5 form p input[type="text"],
+  .container.mt-5 form p input[type="file"],
+  .container.mt-5 form p textarea,
+  .container.mt-5 form p select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+  }
+  
+  .container.mt-5 form p input:focus,
+  .container.mt-5 form p select:focus,
+  .container.mt-5 form p textarea:focus {
+    outline: none;
+    border-color: var(--color-bleu, #2980b9);
+  }
+  
+  /* Boutons */
+  .container.mt-5 form .btn-primary {
+    background-color: var(--color-bleu, #2980b9);
+    border-color: var(--color-bleu, #2980b9);
+    color: #fff;
+    margin-right: 0.5rem;
+  }
+  
+  .container.mt-5 form .btn-primary:hover,
+  .container.mt-5 form .btn-primary:focus {
+    background-color: var(--color-rouge-orange-dark, #c0392b);
+    border-color: var(--color-rouge-orange-dark, #c0392b);
+  }
+  
+  .container.mt-5 form .btn-secondary {
+    background-color: var(--color-jaune, #f1c40f);
+    border-color: var(--color-jaune, #f1c40f);
+    color: #333;
+  }
+  
+  .container.mt-5 form .btn-secondary:hover,
+  .container.mt-5 form .btn-secondary:focus {
+    background-color: var(--color-rouge-orange, #d35400);
+    border-color: var(--color-rouge-orange, #d35400);
+    color: #fff;
+  }
+  

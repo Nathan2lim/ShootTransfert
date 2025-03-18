@@ -1,0 +1,82 @@
+.container {
+    margin-top: 100px;
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+/* =========================
+   FORMULAIRE DE CONNEXION
+   ========================= */
+
+/* Centrage du formulaire et style global */
+form {
+    max-width: 400px;
+    margin: 5rem auto 2rem auto; /* Espace en haut et centrage horizontal */
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 6px;
+    /* Légère ombre pour un aspect professionnel */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Labels */
+  form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  /* Champs de saisie */
+  form input[type="email"],
+  form input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+  }
+  
+  form input[type="email"]:focus,
+  form input[type="password"]:focus {
+    border-color: var(--color-bleu, #2980b9);
+    outline: none;
+  }
+  
+  /* Bouton de connexion */
+  form button[type="submit"] {
+    background-color: var(--color-bleu, #2980b9);
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  form button[type="submit"]:hover,
+  form button[type="submit"]:focus {
+    background-color: var(--color-rouge-orange-dark, #c0392b);
+    outline: none;
+  }
+  
+  /* =========================
+     RÉPONSIVE
+     ========================= */
+  @media (max-width: 576px) {
+    form {
+      margin: 4rem 1rem 2rem 1rem; /* Un peu moins d’espace sur mobile */
+      padding: 1.5rem;
+    }
+  }
+  

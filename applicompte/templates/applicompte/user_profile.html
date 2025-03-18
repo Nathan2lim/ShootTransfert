@@ -1,0 +1,40 @@
+{% extends "shootX/base.html" %}
+{% block title %}Profil de {{ profile_user.userprofile.alias }}{% endblock %}
+{%load static%}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/applicompte-user_profile.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<div class="profile-container">
+    <h1>{{ profile_user.userprofile.alias }}</h1>
+    <p>Email : {{ profile_user.email }}</p>
+    <p>Type d'utilisateur : {{ profile_user.userprofile.get_type_user_display }}</p>
+    <p>Immatriculation : {{ profile_user.userprofile.imatriculation }}</p>
+
+    <div class="photos-section">
+        <h2>Photos</h2>
+        {% if photos %}
+            <ul>
+                {% for photo in photos %}
+                    <li>
+                        <img src="{{ photo.image.url }}" alt="{{ photo.title }}">
+                        <p>{{ photo.title }}</p>
+                        <p>{{ photo.localisation }}</p>
+                        <p>{{ photo.description }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Aucune photo ajoutée.</p>
+        {% endif %}
+    </div>
+    {% if user == profile_user %}
+        <a href="" class="edit-profile-link">Modifier mon profil</a>
+        <a href="{% url 'applicompte:add_photos' user.username %}" class="add-photo-link">Ajouter des photos</a>
+
+    {% endif %}
+</div>
+
+{% endblock %}

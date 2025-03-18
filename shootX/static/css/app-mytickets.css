@@ -1,0 +1,134 @@
+/* =========================
+   CONTENEUR GLOBAL
+   ========================= */
+   .container.mt-5 {
+    max-width: 1200px;
+    margin-top: 5rem !important;
+    margin-bottom: 2rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 6px;
+    /* Ombre légère pour un effet professionnel */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titres de section */
+  .container.mt-5 h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--color-rouge-orange-dark, #c0392b);
+  }
+  
+  /* =========================
+     TABLEAU MES TICKETS
+     ========================= */
+  .table {
+    margin-bottom: 2rem;
+    background-color: #fff;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  .table thead tr {
+    background-color: var(--color-bleu, #2980b9);
+    color: #fff;
+  }
+  
+  .table thead th {
+    border: none;
+    text-align: left;
+    padding: 0.75rem;
+  }
+  
+  .table tbody td {
+    border: 1px solid #ddd;
+    padding: 0.75rem;
+    vertical-align: middle;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f9f9f9; /* Légère coloration au survol */
+  }
+  
+  /* Colonne "Aucun ticket trouvé." (4 colonnes fusionnées) */
+  .table tbody td[colspan="4"] {
+    text-align: center;
+    color: #777;
+  }
+  
+  /* Lien "Détail" dans le tableau */
+  .table tbody td a {
+    color: var(--color-bleu, #2980b9);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .table tbody td a:hover {
+    color: var(--color-rouge-orange-dark, #c0392b);
+    text-decoration: underline;
+  }
+  
+  /* =========================
+     CARTES (TYPES DE TICKETS)
+     ========================= */
+  .card {
+    border: none;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    height: 100%;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Image de la carte */
+  .card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  /* Corps de la carte */
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .card-text {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Bouton "Réserver" */
+  .card-body .btn.btn-primary {
+    background-color: var(--color-bleu, #2980b9);
+    border-color: var(--color-bleu, #2980b9);
+  }
+  
+  .card-body .btn.btn-primary:hover,
+  .card-body .btn.btn-primary:focus {
+    background-color: var(--color-rouge-orange-dark, #c0392b);
+    border-color: var(--color-rouge-orange-dark, #c0392b);
+  }
+  
+  /* =========================
+     RESPONSIVE
+     ========================= */
+  @media (max-width: 576px) {
+    .card-img-top {
+      height: 150px;
+    }
+  }
+  

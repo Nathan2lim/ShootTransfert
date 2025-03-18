@@ -1,0 +1,22 @@
+
+
+{% extends 'shootX/base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/applicompte-general.css' %}">
+<link rel="stylesheet" href="{% static 'css/applicompte-logout.css' %}">
+{% endblock %}
+
+{% block title %} Au revoir {% endblock %}
+
+{% block main %}
+<div class="container mt-5">
+    <h1>Modifier mon profil</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Sauvegarder</button>
+        <a href="{% url 'applicompte:profile' %}" class="btn btn-secondary">Retour</a>
+    </form>
+</div>
+{% endblock %}

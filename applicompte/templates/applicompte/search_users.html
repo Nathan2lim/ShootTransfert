@@ -1,0 +1,41 @@
+{% extends 'shootX/base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/applicompte-general.css' %}">
+<link rel="stylesheet" href="{% static 'css/applicompte-search_user.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/search.js' %}"></script>
+{% endblock %}
+
+
+{% block title %} Recherche d'Utilisateurs {% endblock %}
+
+{% block main %}
+<div class="search-container">
+    <h1>Recherche d'Utilisateurs</h1>
+    <form id="search-form" method="get" action="#">
+        <input type="text" id="search-input" placeholder="Rechercher par email ou alias...">
+        <button type="button" id="search-button">Rechercher</button>
+    </form>
+
+    <div id="results-container">
+        <table id="results-table" class="hidden">
+            <thead>
+                <tr>
+                    <th>Alias</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Les résultats de recherche seront insérés ici -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
+
+

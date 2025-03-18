@@ -1,0 +1,21 @@
+/* =========================
+   FOOTER
+   ========================= */
+   .custom-footer {
+    background-color: var(--color-bleu, #2980b9);
+    color: var(--color-blanc, #fff);
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    border-top: 2px solid var(--color-jaune, #f1c40f);
+  }
+  
+  .custom-footer p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  #main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Hauteur minimale pour couvrir tout l'écran */
+  }

@@ -1,0 +1,20 @@
+
+
+{% extends "shootX/base.html" %} {% block title %} Inscription {% endblock %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/applicompte-register.css' %}">
+{% endblock %}
+
+
+
+{% block main %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">S'inscrire</button>
+    </form>
+    <a href="{% url 'applicompte:login' %}">Déjà inscrit ? Connectez-vous ici.</a>
+
+{% endblock %}

@@ -1,0 +1,101 @@
+/* =========================
+   CONTENEUR PRINCIPAL
+   ========================= */
+   .profile-container {
+    max-width: 800px;
+    margin: 5rem auto 2rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 6px;
+    /* Légère ombre pour un aspect professionnel */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titre du profil (alias) */
+  .profile-container h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    color: var(--color-rouge-orange-dark, #c0392b);
+  }
+  
+  /* Infos de base (Email, Type, Immatriculation) */
+  .profile-container p {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Liens d'édition du profil et d'ajout de photos */
+  .edit-profile-link,
+  .add-photo-link {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    color: #fff;
+    background-color: var(--color-bleu, #2980b9);
+    transition: background-color 0.2s;
+  }
+  
+  .edit-profile-link:hover,
+  .add-photo-link:hover {
+    background-color: var(--color-rouge-orange-dark, #c0392b);
+  }
+  
+  /* =========================
+     SECTION PHOTOS
+     ========================= */
+  .photos-section {
+    margin-top: 2rem;
+  }
+  
+  .photos-section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: var(--color-bleu, #2980b9);
+  }
+  
+  /* Liste des photos */
+  .photos-section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid; /* Grille responsive */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Chaque photo */
+  .photos-section li {
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 1rem;
+    text-align: center;
+    transition: box-shadow 0.2s;
+  }
+  
+  .photos-section li:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Image */
+  .photos-section img {
+    max-width: 100%;
+    height: 140px; /* Ajuste selon tes préférences */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Titre et description d’une photo */
+  .photos-section p {
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
