@@ -1,0 +1,20 @@
+{% extends "shootX/partial/base.html" %}
+{% block title %}Ajouter des photos{% endblock %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'shootX/css/general.css' %}">
+    <link rel="stylesheet" href="{% static 'shootX/css/homepage.css' %}">
+{% endblock %}
+
+{% block main %}
+<h2>Ajouter des photos à la galerie</h2>
+<p>Galerie du client : {{ gallery.client_code.code }}</p>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Ajouter les photos</button>
+</form>
+
+<a href="{% url 'app:transfer_gallery' gallery.id %}">Retour à la galerie</a>
+{% endblock %}

@@ -1,9 +1,9 @@
-{% extends "shootX/base.html" %}
+{% extends "shootX/partial/base.html" %}
 {% block title %}SherWheels Festival{% endblock %}
 {%load static%}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/general.css' %}">
-    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'shootX/css/general.css' %}">
+    <link rel="stylesheet" href="{% static 'shootX/css/homepage.css' %}">
 {% endblock %}
 
 {% block main %}
@@ -14,7 +14,7 @@
     }
     
     #homepage {
-        background-image: url("{% static 'images/home/background.jpg' %}");
+        background-image: url("{% static 'shootX/images/home/background.jpg' %}");
         background-size: cover;
         background-position: center;
 

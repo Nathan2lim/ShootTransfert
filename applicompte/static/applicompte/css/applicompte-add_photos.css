@@ -1,0 +1,101 @@
+/* =========================
+   CONTENEUR DU FORMULAIRE
+   ========================= */
+   form {
+    max-width: 600px; /* Largeur max pour limiter la taille du formulaire */
+    margin: 5rem auto 2rem auto; /* Espace en haut et centrage horizontal */
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 6px;
+    /* Légère ombre pour un aspect pro */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Titre principal (h1) */
+  h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--color-rouge-orange-dark, #c0392b);
+  }
+  
+  /* Champs du formulaire (form.as_p) */
+  form p {
+    margin-bottom: 1.2rem;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  form input[type="text"],
+  form input[type="file"],
+  form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+  }
+  
+  form input:focus,
+  form textarea:focus {
+    outline: none;
+    border-color: var(--color-bleu, #2980b9);
+  }
+  
+  /* Bouton "Ajouter" */
+  form button[type="submit"] {
+    background-color: var(--color-bleu, #2980b9);
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  form button[type="submit"]:hover,
+  form button[type="submit"]:focus {
+    background-color: var(--color-rouge-orange-dark, #c0392b);
+    outline: none;
+  }
+  
+  /* =========================
+     LIEN "RETOUR AU PROFIL"
+     ========================= */
+  a {
+    display: inline-block; /* pour pouvoir gérer marges et padding */
+    margin: 1rem auto 0 auto;
+    text-align: center;
+    color: var(--color-bleu, #2980b9);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  a:hover {
+    color: var(--color-rouge-orange-dark, #c0392b);
+    text-decoration: underline;
+  }
+  
+  /* =========================
+     RESPONSIVE
+     ========================= */
+  @media (max-width: 576px) {
+    form {
+      margin: 4rem 1rem 2rem 1rem;
+      padding: 1.5rem;
+    }
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
+  
+
+  

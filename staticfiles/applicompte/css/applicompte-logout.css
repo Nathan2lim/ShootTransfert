@@ -1,0 +1,45 @@
+/* =========================
+   STYLE POUR LA PAGE DE DÉCONNEXION
+   ========================= */
+
+/* Conteneur du message de déconnexion */
+.div-logout {
+    max-width: 500px;
+    margin: 5rem auto 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 6px;
+    /* Ombre légère pour un effet professionnel */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Centrage du texte */
+    text-align: center;
+  }
+  
+  /* Paragraphes du message */
+  .div-logout p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* Lien Connexion */
+  .div-logout a {
+    display: inline-block; /* Pour qu’on puisse gérer facilement les marges */
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #fff; /* couleur du texte */
+    background-color: var(--color-bleu, #2980b9); /* couleur de fond */
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  /* Survol du lien */
+  .div-logout a:hover,
+  .div-logout a:focus {
+    background-color: var(--color-rouge-orange-dark, #c0392b);
+    text-decoration: none;
+    outline: none;
+  }
+  

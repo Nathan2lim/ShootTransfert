@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import UserProfile,PhotoUser  # Import du modèle UserProfile
+from applicompte.models import UserProfile,PhotoUser  # Import du modèle UserProfile
 from django.core.validators import RegexValidator
 
 class UserCreationSW(UserCreationForm):
@@ -20,7 +20,7 @@ class UserCreationSW(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'password1', 'password2', 'imatriculation')
+        fields = ('first_name', 'last_name', 'email', 'password1', 'password2')
 
     def save(self, commit=True):
         user = super().save(commit=False)  # Appeler la méthode parente pour créer l'utilisateur
@@ -32,7 +32,7 @@ class UserCreationSW(UserCreationForm):
 class StandardUserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = ['imatriculation']
+        fields = ['type_user', 'alias']
 
 class PremiumUserProfileForm(forms.ModelForm):
     class Meta:

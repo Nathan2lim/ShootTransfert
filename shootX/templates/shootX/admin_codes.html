@@ -1,0 +1,44 @@
+{% extends "shootX/partial/base.html" %}
+{% block title %}SherWheels Festival{% endblock %}
+{%load static%}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'shootX/css/general.css' %}">
+    <link rel="stylesheet" href="{% static 'shootX/css/homepage.css' %}">
+{% endblock %}
+
+{% block main %}
+
+<h2>Gestion des Codes Clients</h2>
+<a href="{% url 'app:create_code' %}">Créer un Nouveau Code</a>
+
+<table border="1">
+    <tr>
+        <th>Code</th>
+        <th>Date de Création</th>
+        <th>Statut</th>
+        <th>Créé par</th>
+        <th>Actions</th>
+    </tr>
+    {% for code in codes %}
+    <tr>
+        <td>{{ code.code }}</td>
+        <td>{{ code.created_at }}</td>
+        <td>
+            {% if code.is_active %}
+                Actif
+            {% else %}
+                Désactivé
+            {% endif %}
+        </td>        
+        <td>{{ code.user_created.username }}</td>
+        <td>
+            <a href="{% url 'app:update_code' code.id %}">Modifier</a> |
+            <a href="{% url 'app:active_code' code.id %}">{% if code.is_active %} Désactivé {% else %} Activé {% endif %}</a> |
+
+            <a href="{% url 'app:delete_code' code.id %}" onclick="return confirm('Supprimer ce code ?');">Supprimer</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

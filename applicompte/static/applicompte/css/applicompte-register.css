@@ -1,0 +1,100 @@
+/* =========================
+   FORMULAIRE D’INSCRIPTION
+   ========================= */
+
+/* Conteneur du formulaire */
+form {
+    max-width: 500px;
+    margin: 5rem auto 2rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 6px;
+    /* Légère ombre pour un effet professionnel */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Labels et champs générés par {{ form.as_p }} */
+  form p {
+    margin-bottom: 1.2rem;
+  }
+  
+  form p label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  form p input[type="text"],
+  form p input[type="email"],
+  form p input[type="password"],
+  form p input[type="checkbox"],
+  form p select,
+  form p textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+  }
+  
+  form p input[type="checkbox"] {
+    width: auto;  /* Pour éviter que la checkbox prenne la largeur 100% */
+  }
+  
+  /* Focus sur les champs */
+  form p input:focus,
+  form p textarea:focus,
+  form p select:focus {
+    outline: none;
+    border-color: var(--color-bleu, #2980b9);
+  }
+  
+  /* Bouton "S'inscrire" */
+  form button[type="submit"] {
+    background-color: var(--color-bleu, #2980b9);
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+  }
+  
+  form button[type="submit"]:hover,
+  form button[type="submit"]:focus {
+    background-color: var(--color-rouge-orange-dark, #c0392b);
+    outline: none;
+  }
+  
+  /* =========================
+     LIEN DE REDIRECTION
+     ========================= */
+  a {
+    display: inline-block;
+    margin: 1rem auto 0;
+    text-align: center;
+    color: var(--color-bleu, #2980b9);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  a:hover {
+    color: var(--color-rouge-orange-dark, #c0392b);
+    text-decoration: underline;
+  }
+  
+  /* =========================
+     RÉPONSIVE
+     ========================= */
+  @media (max-width: 576px) {
+    form {
+      margin: 4rem 1rem 2rem 1rem;
+      padding: 1.5rem;
+    }
+  }
+  

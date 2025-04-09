@@ -1,0 +1,241 @@
+/* Styles généraux */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Conteneur de la recherche */
+.search-container {
+  width: 60%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.search-container h1 {
+  font-size: 24px;
+  color: #d9534f;
+  margin-bottom: 20px;
+}
+
+/* Formulaire de recherche */
+#search-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#search-input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+#search-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#search-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease-in-out;
+}
+
+#search-button:hover {
+  background-color: #0056b3;
+}
+
+/* Conteneur des résultats */
+#results-container {
+  width: 60%;
+  margin: auto;
+  transition: width 0.3s ease-in-out, max-width 0.3s ease-in-out;
+  overflow-x: auto;
+}
+
+#results-container.full-screen {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Table des résultats */
+#results-table {
+  width: 100%;
+  border-collapse: collapse;
+  display: none;
+}
+
+#results-table.hidden {
+  display: none;
+}
+
+#results-table thead {
+  background-color: #007bff;
+  color: white;
+}
+
+#results-table th, #results-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+#results-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Bouton "Voir le profil" */
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease-in-out;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Conteneur principal des résultats */
+#results-container {
+  width: 80%;
+  max-width: 900px;
+  margin: auto;
+  transition: width 0.3s ease-in-out;
+  overflow-x: auto;
+}
+
+/* Mode plein écran après recherche */
+#results-container.full-screen {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Table des résultats */
+#results-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Évite le décalage de taille */
+  display: none;
+}
+
+#results-table.hidden {
+  display: none;
+}
+
+#results-table thead {
+  background-color: #007bff;
+  color: white;
+}
+
+#results-table th, #results-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word;
+}
+
+/* Ajustement de la hauteur des lignes */
+#results-table tbody tr {
+  height: 50px;
+}
+
+/* Empêcher les boutons d'être trop grands */
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Aligner les boutons correctement */
+#results-table td:last-child {
+  text-align: center;
+}
+
+/* Correction des lignes en alternance */
+#results-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #results-container {
+      width: 95%;
+  }
+
+  #search-form {
+      flex-direction: column;
+  }
+
+  #search-input {
+      width: 100%;
+  }
+
+  #search-button {
+      width: 100%;
+  }
+
+  #results-table {
+      font-size: 14px;
+  }
+
+  .btn-primary {
+      padding: 5px 8px;
+      font-size: 12px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .search-container {
+      width: 90%;
+      padding: 15px;
+  }
+
+  #search-form {
+      flex-direction: column;
+  }
+
+  #search-input {
+      width: 100%;
+  }
+
+  #search-button {
+      width: 100%;
+  }
+
+  #results-container {
+      width: 90%;
+  }
+}

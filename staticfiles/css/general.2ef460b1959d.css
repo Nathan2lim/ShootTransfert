@@ -1,0 +1,18 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Permet d'étirer le contenu principal et pousser le footer vers le bas */
+}
+
+footer {
+    width: 100%;
+    background-color: #333; /* Couleur du footer */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

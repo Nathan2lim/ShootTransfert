@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'app:home' %}">MonSite</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+                <!-- Accueil -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'app:home' %}">Accueil</a>
+                </li>
+  
+                <!-- Section pour les utilisateurs connectés -->
+                {% if user.is_authenticated %}
+                
+                <!-- Profil -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'applicompte:profile' %}">Mon Profil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'applicompte:edit_profile' %}">Éditer Profil</a>
+                </li>
+  
+                <!-- Gestion des utilisateurs -->
+                {% if user.is_staff %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Administration
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                        <li><a class="dropdown-item" href="{% url 'applicompte:manage_users' %}">Gérer Utilisateurs</a></li>
+                        <li><a class="dropdown-item" href="{% url 'applicompte:search_users_page' %}">Recherche Utilisateurs</a></li>
+                        <li><a class="dropdown-item" href="{% url 'admin:index' %}">Panel Admin</a></li>
+                    </ul>
+                </li>
+                {% endif %}
+  
+                <!-- Gestion des Codes et Galeries -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="galleryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Gestion des Galeries
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="galleryDropdown">
+                        <li><a class="dropdown-item" href="{% url 'app:code_list' %}">Codes Clients</a></li>
+                        <li><a class="dropdown-item" href="{% url 'app:create_code' %}">Créer un Code</a></li>
+                        <li><a class="dropdown-item" href="{% url 'app:home' %}">Accès Galerie</a></li>
+                    </ul>
+                </li>
+                
+                {% endif %}
+            </ul>
+  
+            <!-- Connexion/Déconnexion -->
+            <ul class="navbar-nav">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link btn btn-danger text-white" href="{% url 'applicompte:logout' %}">Déconnexion</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'applicompte:login' %}">Connexion</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary text-white" href="{% url 'applicompte:register' %}">S'inscrire</a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+  </nav>
+  

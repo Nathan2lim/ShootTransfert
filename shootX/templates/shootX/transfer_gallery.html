@@ -1,0 +1,20 @@
+{% extends "shootX/partial/base.html" %}
+{% block title %}SherWheels Festival{% endblock %}
+{%load static%}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'shootX/css/general.css' %}">
+    <link rel="stylesheet" href="{% static 'shootX/css/homepage.css' %}">
+{% endblock %}
+
+{% block main %}
+
+
+<h2>Galerie de Photos</h2>
+{% for photo in gallery.photos.all %}
+    <img src="{{ photo.image.url }}" alt="Photo">
+    <a href="{{ photo.image.url }}" download>Télécharger</a>
+{% endfor %}
+<br>
+<a href="{% url 'app:download_transfer_photos' gallery.id %}">Télécharger toutes les photos</a>
+
+{% endblock %}docker volume rm

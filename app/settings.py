@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+import logging
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,15 +82,14 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',  # Utiliser MySQL pour MariaDB
-        'NAME': 'django_db',  # Le nom de la base de données (défini dans docker-compose.yml)
-        'USER': 'root',  # L'utilisateur défini dans docker-compose.yml
-        'PASSWORD': 'root',  # Le mot de passe défini dans docker-compose.yml
-        'HOST': 'Base_de_donnee_MySQL',  # ⚠️ IMPORTANT : C'est le container_name défini dans docker-compose.yml
-        'PORT': '3306',  # Port MySQL par défaut
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_db',
+        'USER': 'django_user',
+        'PASSWORD': 'django_password',
+        'HOST': 'Base_de_donnee_MySQL',
+        'PORT': '3306',
     }
 }
-
 
 
 # Password validation
@@ -110,29 +111,18 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
-
-
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-# Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "/static/" 
 STATIC_ROOT = BASE_DIR / "staticfiles"  
 
-STATICFILES_DIRS = [
-    BASE_DIR / "shootX/static",        # Pour l'application "shootX"
-    BASE_DIR / "applicompte/static" # Pour l'application "applicompte"
-]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Remove explicit STATICFILES_DIRS since we're using the Django app structure
+# Django will automatically look for static files in the static/ directory of each installed app
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 
 STATIC_VERSION = "1.0"
 
@@ -147,24 +137,31 @@ STRIPE_SECRET_KEY = 'sk_test_51QNEqeJw2gC2InngK042I24cK7aHs2scMz05jv0hfJD3Z72hz0
 STRIPE_PUBLISHABLE_KEY = 'pk_test_51QNEqeJw2gC2InnghNhnbqDF8fXCrfckB2YSp9GEUlaK6c8X83E4chaWFNnian1uLRx5wlnBAGwghx06phBFrbwv00rqA2rLwu'
 
 
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'file': {
-#             'level': 'DEBUG',
-#             'class': 'logging.FileHandler',
-#             'filename': '/var/log/django.log',
-#         },
-#     },
-#     'loggers': {
-#         'django': {
-#             'handlers': ['file'],
-#             'level': 'DEBUG',
-#             'propagate': True,
-#         },
-#     },
-# }
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+            "formatter": "simple",
+        },
+    },
+    "formatters": {
+        "simple": {
+            "format": "[%(asctime)s] %(levelname)s: %(message)s",
+            "datefmt": "%Y-%m-%d %H:%M:%S",
+        },
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": "INFO",  # Change "INFO" en "DEBUG" si besoin
+            "propagate": True,
+        },
+    },
+}
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'

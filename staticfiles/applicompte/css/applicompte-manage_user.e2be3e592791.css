@@ -1,0 +1,117 @@
+/* Surcouche CSS pour personnaliser le rendu */
+body {
+    background: linear-gradient(135deg, #6CA6CD, #283593);
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #E3F2FD;
+}
+
+table {
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+th, td {
+    font-size: 1rem;
+    text-align: center;
+    padding: 15px;
+}
+
+th {
+    background-color: #3F51B5;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #283593;
+}
+
+td {
+    background: #F9F9F9;
+    color: #333;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+tr:hover td {
+    background-color: #E3F2FD;
+}
+
+button {
+    background: linear-gradient(45deg, #5C6BC0, #283593);
+    color: #FFF;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #3949AB;
+    transform: scale(1.05);
+}
+
+form {
+    display: inline-block;
+}
+
+.main-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .main-container h1 {
+    text-align: center;
+  }
+  
+  .main-container table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Enveloppe tout le contenu principal dans un max-width, 
+   puis centre-le avec margin auto */
+main {
+    max-width: 1500px;       /* Ajuste selon tes préférences */
+    margin: 0 auto;         /* Centre horizontalement */
+  }
+  
+  /* Centre aussi le titre et le tableau si tu le souhaites */
+  main h1 {
+    text-align: center;
+  }
+  
+  /* Centre le tableau si nécessaire 
+     (sinon, le max-width de <main> suffit) */
+  main table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+  
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,72 @@
+/* =========================
+   CONTAINER GLOBAL
+   ========================= */
+   .container.mt-5 {
+    max-width: 700px;               /* Largeur max pour resserrer le contenu */
+    margin-top: 5rem !important;    /* Déplace vers le bas pour éviter la navbar fixe */
+    margin-bottom: 2rem;
+  }
+  
+  /* =========================
+     CARTE (Bootstrap)
+     ========================= */
+  .card {
+    border: none;                   /* Supprime la bordure par défaut de la card */
+    border-radius: 6px;            /* Coins arrondis plus marqués */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Légère ombre pour un rendu professionnel */
+  }
+  
+  /* Header de la card (override bg-dark) */
+  .card-header.bg-dark {
+    background-color: var(--color-rouge-orange-dark, #c0392b) !important;
+    border-bottom: 2px solid var(--color-jaune, #f1c40f) !important;
+    color: #fff !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  
+  /* Contenu de la card */
+  .card-body p {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .card-body p strong {
+    color: #555;
+  }
+  
+  /* =========================
+     BOUTONS
+     ========================= */
+  /* Bouton principal (.btn-primary) */
+  .btn.btn-primary {
+    background-color: var(--color-bleu, #2980b9) !important;
+    border-color: var(--color-bleu, #2980b9) !important;
+    color: #fff !important;
+    margin-right: 0.5rem; /* espace entre les deux boutons */
+    transition: background-color 0.2s;
+  }
+  
+  .btn.btn-primary:hover,
+  .btn.btn-primary:focus {
+    background-color: var(--color-rouge-orange-dark, #c0392b) !important;
+    border-color: var(--color-rouge-orange-dark, #c0392b) !important;
+  }
+  
+  /* Bouton danger (.btn-danger) */
+  .btn.btn-danger {
+    background-color: var(--color-jaune, #f1c40f) !important;
+    border-color: var(--color-jaune, #f1c40f) !important;
+    color: #333 !important;
+    transition: background-color 0.2s;
+  }
+  
+  .btn.btn-danger:hover,
+  .btn.btn-danger:focus {
+    background-color: var(--color-rouge-orange, #d35400) !important;
+    border-color: var(--color-rouge-orange, #d35400) !important;
+    color: #fff !important;
+  }
+  

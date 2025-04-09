@@ -1,0 +1,16 @@
+{% extends "shootX/partial/base.html" %}
+{% block title %}SherWheels Festival{% endblock %}
+{%load static%}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'shootX/css/general.css' %}">
+    <link rel="stylesheet" href="{% static 'shootX/css/homepage.css' %}">
+{% endblock %}
+
+{% block main %}
+<h2>Mes photos</h2>
+{% for photo in photos %}
+    <img src="{{ photo.image.url }}" alt="Photo">
+    <p>{{ photo.title }}</p>
+    <a href="{{ photo.image.url }}" download>Télécharger</a>
+{% endfor %}
+{% endblock %}

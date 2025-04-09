@@ -8,8 +8,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: django_db
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_USER: django_user
+      MYSQL_PASSWORD: django_password
     ports:
       - "3306:3306"
     volumes:
@@ -37,12 +37,19 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:5.2.1
+    container_name: phpmyadmin
     restart: always
     ports:
       - "8080:80"
     environment:
       PMA_HOST: Base_de_donnee_MySQL
       MYSQL_ROOT_PASSWORD: root
+      PMA_USER: django_user  
+      PMA_PASSWORD: django_password
+      PMA_ABSOLUTE_URI: http://localhost:8080
+      PMA_ARBITRARY: 0
+    depends_on:
+      - db
 
 
 volumes:
